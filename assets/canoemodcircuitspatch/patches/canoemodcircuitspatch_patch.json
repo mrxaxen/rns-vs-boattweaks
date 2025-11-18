@@ -72,7 +72,8 @@
     "op":"add",
     "path": "/behaviors",
     "value": [
-      {"name": "BoatableGenericTypedContainer"}
+      {"name": "BoatableGenericTypedContainer"},
+      {"name": "Container"}
     ]
   },
   {
