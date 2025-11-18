@@ -1,0 +1,354 @@
+[
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "replace",
+    "path": "/behaviorConfigs/creaturecarrier/seatsByType/canoe-barkcanoe-*/0",
+    "value": {  "apName": "BackSeatAP",
+          "controllable": true,
+          "mountRotation": { y: 180 },
+          "bodyYawLimit": null,
+          "eyeHeight": 1.25 },
+      "side": "Server",
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "replace",
+    "path": "/behaviorConfigs/creaturecarrier/seatsByType/canoe-barkcanoe-*/3",
+    "value": {  "apName": "FrontSeatAP",
+          "controllable": true,
+          "mountRotation": { y: 180 },
+          "bodyYawLimit": null,
+          "eyeHeight": 1.25 },
+    "side": "Server",
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "addmerge",
+    "path": "/behaviorConfigs/creaturecarrier/seatsByType/canoe-barkcanoe-*/0",
+    "value":
+      {
+        "mountOffsetByType": { "*": {"x":1.26,"y":0,"z":1.18}}
+      },
+    "side": "Server",
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "addmerge",
+    "path": "/behaviorConfigs/creaturecarrier/seatsByType/canoe-barkcanoe-*/1",
+    "value":
+      {
+        "mountOffsetByType": { "*": {"x":1.25,"y":0,"z":1.18}}
+      },
+    "side": "Server",
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "addmerge",
+    "path": "/behaviorConfigs/creaturecarrier/seatsByType/canoe-barkcanoe-*/2",
+    "value":
+      {
+        "mountOffsetByType": { "*": {"x":0.90,"y":0,"z":1.18}}
+      },
+    "side": "Server",
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "addmerge",
+    "path": "/behaviorConfigs/creaturecarrier/seatsByType/canoe-barkcanoe-*/3",
+    "value":
+      {
+        "mountOffsetByType": { "*": {"x":0.8,"y":0,"z":1.18}}
+      },
+    "side": "Server",
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file":"game:blocktypes/wood/barrel.json",
+    "op":"add",
+    "path": "/behaviors",
+    "value": [
+      {"name": "BoatableGenericTypedContainer"}
+    ]
+  },
+  {
+    "file":"game:blocktypes/wood/barrel.json",
+    "op":"add",
+    "path": "/attributes",
+    "value": {
+      "attachableToEntity": {
+        categoryCode: "barrelstorage"
+      }
+    }
+  },
+  {
+    "file": "game:entities/water/boat.json",
+    "op": "replace",
+    "path": "/behaviorConfigs/rideableaccessories/wearableSlotsByType",
+    "value": {
+      "boat-sailed-*": [
+        {
+          code: "Left Prow Storage",
+          forCategoryCodes: ["anchor"],
+          attachmentPointCode: "LProwAP",
+          stepParentTo: {
+            "": { elementName: "LeftProwStorage" }
+          }
+        },
+        {
+          code: "Upper Mast Storage",
+          forCategoryCodes: ["lantern"],
+          attachmentPointCode: "UpperMastAP",
+          stepParentTo: {
+            "": { elementName: "UpperMastStorage" }
+          }
+        },
+        {
+          code: "Figurehead",
+          forCategoryCodes: ["chiseledblock"],
+          attachmentPointCode: "FigureheadAP",
+          stepParentTo: {
+            "": { elementName: "FigureHeadStorage" }
+          }
+        },
+        {
+          code: "Left Ratlines",
+          forCategoryCodes: ["ratlines"],
+          attachmentPointCode: "RatlineLAP",
+          stepParentTo: {
+            "": { elementName: "RatlineL" }
+          }
+        },
+        {
+          code: "Right Ratlines",
+          forCategoryCodes: ["ratlines"],
+          attachmentPointCode: "RatlineRAP",
+          stepParentTo: {
+            "": { elementName: "RatlineR" }
+          }
+        },
+        {
+          code: "Left Storage 1",
+          forCategoryCodes: ["seat", "chest", "ropetiepost", "basket", "crate", "barrelstorage"],
+          canMergeWith: ["Left Storage 2"],
+          attachmentPointCode: "LStore1AP",
+          stepParentTo: {
+            "": { elementName: "LeftStorage1" }
+          }
+        },
+        {
+          code: "Left Storage 2",
+          forCategoryCodes: ["seat", "chest", "ropetiepost", "basket", "crate", "barrelstorage"],
+          canMergeWith: ["Left Storage 3"],
+          attachmentPointCode: "LStore2AP",
+          stepParentTo: {
+            "": { elementName: "LeftStorage2" }
+          }
+        },
+        {
+          code: "Left Storage 3",
+          forCategoryCodes: ["seat", "chest", "ropetiepost", "basket", "crate", "barrelstorage"],
+          canMergeWith: ["Left Storage 4"],
+          attachmentPointCode: "LStore3AP",
+          stepParentTo: {
+            "": { elementName: "LeftStorage3" }
+          }
+        },
+        {
+          code: "Left Storage 4",
+          forCategoryCodes: ["seat", "chest", "basket", "crate", "barrelstorage"],
+          attachmentPointCode: "LStore4AP",
+          stepParentTo: {
+            "": { elementName: "LeftStorage4" }
+          }
+        },
+        {
+          code: "Right Storage 1",
+          forCategoryCodes: ["seat", "chest", "ropetiepost", "basket", "crate", "barrelstorage"],
+          canMergeWith: ["Right Storage 2"],
+          attachmentPointCode: "RStore1AP",
+          stepParentTo: {
+            "": { elementName: "RightStorage1" }
+          }
+        },
+        {
+          code: "Right Storage 2",
+          forCategoryCodes: ["seat", "chest", "ropetiepost", "basket", "crate", "barrelstorage"],
+          canMergeWith: ["Right Storage 3"],
+          attachmentPointCode: "RStore2AP",
+          stepParentTo: {
+            "": { elementName: "RightStorage2" }
+          }
+        },
+        {
+          code: "Right Storage 3",
+          forCategoryCodes: ["seat", "chest", "ropetiepost", "basket", "crate", "barrelstorage"],
+          canMergeWith: ["Right Storage 4"],
+          attachmentPointCode: "RStore3AP",
+          stepParentTo: {
+            "": { elementName: "RightStorage3" }
+          }
+        },
+        {
+          code: "Right Storage 4",
+          forCategoryCodes: ["seat", "chest", "basket", "crate", "barrelstorage"],
+          attachmentPointCode: "RStore4AP",
+          stepParentTo: {
+            "": { elementName: "RightStorage4" }
+          }
+        },
+        {
+          code: "LeftSeatAP",
+          forCategoryCodes: []
+        },
+        {
+          code: "RightSeatAP",
+          forCategoryCodes: []
+        },
+        {
+          code: "Lower Mast Storage",
+          forCategoryCodes: ["rope"],
+          attachmentPointCode: "LowerMastAP",
+          stepParentTo: {
+            "": { elementName: "LowerMastStorage" }
+          }
+        }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "replace",
+    "path": "/behaviorConfigs/rideableaccessories/wearableSlotsByType",
+    "value": {
+      "canoe-barkcanoe-*": [
+        {
+          code: "Front Seat",
+          forCategoryCodes: ["chest","basket", "crate", "barrelstorage"],
+          attachmentPointCode: "FrontSeatAP",
+          stepParentTo: {
+            "": { elementName: "FrontSeat" }
+          },
+          emptyInteractPassThrough: true
+        },
+        {
+          code: "Middle Seat 2",
+          forCategoryCodes: ["chest","basket", "crate", "barrelstorage"],
+          attachmentPointCode: "MiddleSeat2AP",
+          stepParentTo: {
+            "": { elementName: "MiddleSeat2" }
+          },
+          emptyInteractPassThrough: true
+        },
+        {
+          code: "Middle Seat 1",
+          forCategoryCodes: ["chest","basket","crate","barrelstorage"],
+          attachmentPointCode: "MiddleSeat1AP",
+          stepParentTo: {
+            "": { elementName: "MiddleSeat1" }
+          },
+        },
+        {
+          code: "backseat",
+          forCategoryCodes: ["chest","basket", "crate", "barrelstorage"],
+          attachmentPointCode: "BackSeatAP",
+          stepParentTo: {
+            "": { elementName: "BackSeat" }
+          },
+          emptyInteractPassThrough: true
+        },
+        {
+          code: "Oar Rack",
+          forCategoryCodes: ["carvedoar"],
+          attachmentPointCode: "OarAP",
+          stepParentTo: {
+            "": { elementName: "OarStorage" }
+          }
+        },
+        {
+          code: "lanternspot",
+          forCategoryCodes: ["oillamp"],
+          attachmentPointCode: "LanternStorageAP",
+          stepParentTo: {
+            "": { elementName: "lanternspot" }
+          }
+        },
+        {
+          code: "actuallanternspot",
+          forCategoryCodes: ["lantern"],
+          attachmentPointCode: "ActualLanternStorageAP",
+          stepParentTo: {
+            "": { elementName: "actuallanternspot" }
+          }
+        }
+      ] 
+    },
+    "side": "Server",
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "addmerge",
+    "path": "/attributes",
+    "value":
+    {
+      speedMultiplierByType: {
+        "canoe-barkcanoe-*": 1.5
+      }
+    },
+    "side": "Server",
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:shapes/entity/water/boat/barkcanoe.json",
+    "op": "addmerge",
+    "path": "/elements/0/children/-",
+    "value": {	"name": "actuallanternspot",
+          "from": [ -37.0, 9.0, -8.0 ],
+          "to": [ -26.0, 13.0, 0.0 ],
+          "rotationOrigin": [ -34.0, 9.0, 0.0 ],
+          "faces": {
+          },
+          "attachmentpoints": [
+            {
+              "code": "ActualLanternStorageAP",
+              "posX": "-5.0","posY": "0.0","posZ": "-5.0",
+              "rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+            }
+          ]},
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:shapes/entity/water/boat/barkcanoe.json",
+    "op": "replace",
+    "path": "/elements/0/children/12/from",
+    "value": [ -34.0, 9.0, -4.0 ],
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:shapes/entity/water/boat/barkcanoe.json",
+    "op": "replace",
+    "path": "/elements/0/children/12/to",
+    "value": [ -26.0, 13.0, 4.0 ],
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:entities/water/barkcanoe.json",
+    "op": "replace",
+    "path": "/behaviorConfigs/selectionboxes/selectionBoxesByType",
+    "value": { "canoe-barkcanoe-*": ["FrontSeatAP", "MiddleSeat2AP", "MiddleSeat1AP", "BackSeatAP", "OarAP", "LanternStorageAP", "ActualLanternStorageAP"] },
+    "dependsOn": [{ "modid": "canoemod" }]
+  },
+  {
+    "file": "canoemod:lang/en.json",
+    "op": "addmerge",
+    "path": "/creature-canoemod:*-selectionbox-ActualLanternStorageAP",
+    "value": "lantern spot",
+    "dependsOn": [{ "modid": "canoemod" }]
+  }
+]

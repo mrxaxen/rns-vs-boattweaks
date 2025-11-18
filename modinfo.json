@@ -1,0 +1,12 @@
+{
+  "Type": "content",
+  "Name": "RnS - Boat tweaks",
+  "Version": "1.0.0",
+  "Description": "Patches Canoe Mod by iuno and sailboats with a few personal tweaks.",
+  "ModID": "rnsboattweaks",
+  "Authors": [
+    "CircuitPwne",
+    "MrXaxen"
+  ],
+  "Side": "Universal"
+}
